@@ -4,7 +4,6 @@ from nltk.tokenize import word_tokenize
 
 nltk.download('punkt')
 nltk.download('wordnet') # These two lines only need to be run once
-nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('universal_tagset')
 lemmatiser = WordNetLemmatizer()

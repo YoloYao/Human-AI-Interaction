@@ -11,13 +11,13 @@ import nltk
 nltk.download('gutenberg')
 nltk.corpus.gutenberg.fileids()
 # 
-#
+# 下载网页内容
 # from urllib import request
 # url = "http://example.org"
 # raw = request.urlopen(url).read().decode('utf-8')
 # print(raw)
 # 
-# 
+# 下载网页内容
 # import nltk
 # from urllib import request
 # url = "http://www.gutenberg.org/files/84/84-0.txt"
@@ -29,6 +29,8 @@ nltk.corpus.gutenberg.fileids()
 #     for line in f :
 #       print(line)
 # import nltk
+
+# 下载停用词
 # nltk.download('stopwords')
 # from nltk.corpus import stopwords
 # from nltk.tokenize import word_tokenize
