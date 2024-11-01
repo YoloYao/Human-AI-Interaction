@@ -40,45 +40,46 @@ for sentence in sents:
     freq_uni = nltk.FreqDist(unigram)
 freq_bi = nltk.FreqDist(bigram)
 freq_tri = nltk.FreqDist(trigram)
-print("5 most common unigrams:" + str(freq_uni.most_common(5)))
-print("5 most common bigrams: " + str(freq_bi.most_common(5)))
-print("5 most common trigrams: " + str(freq_tri.most_common(5)))
+# print("5 most common unigrams:" + str(freq_uni.most_common(5)))
+# print("5 most common bigrams: " + str(freq_bi.most_common(5)))
+# print("5 most common trigrams: " + str(freq_tri.most_common(5)))
+for i in range(len(tokenized_text)):
+    print(tokenized_text[i])
 
+# ngrams_all = {1:[], 2:[], 3:[]}
+# for i in range(3):
+#     for each in tokenized_text:
+#         for j in ngrams(each, i+1):
+#             ngrams_all[i+1].append(j)
 
-ngrams_all = {1:[], 2:[], 3:[]}
-for i in range(3):
-    for each in tokenized_text:
-        for j in ngrams(each, i+1):
-            ngrams_all[i+1].append(j)
+# ngrams_voc = {1:set([]), 2:set([]), 3:set([])}
+# for i in range(3):
+#     for gram in ngrams_all[i+1]:
+#         if gram not in ngrams_voc[i+1]:
+#             ngrams_voc[i+1].add(gram)
 
-ngrams_voc = {1:set([]), 2:set([]), 3:set([])}
-for i in range(3):
-    for gram in ngrams_all[i+1]:
-        if gram not in ngrams_voc[i+1]:
-            ngrams_voc[i+1].add(gram)
+# total_ngrams = {1:-1, 2:-1, 3:-1}
+# total_voc = {1:-1, 2:-1, 3:-1}
+# for i in range(3):
+#     total_ngrams[i+1] = len(ngrams_all[i+1])
+#     total_voc[i+1] = len(ngrams_voc[i+1])
 
-total_ngrams = {1:-1, 2:-1, 3:-1}
-total_voc = {1:-1, 2:-1, 3:-1}
-for i in range(3):
-    total_ngrams[i+1] = len(ngrams_all[i+1])
-    total_voc[i+1] = len(ngrams_voc[i+1])
+# ngrams_prob = {1:[], 2:[], 3:[]}
+# for i in range(3):
+#     for ngram in ngrams_voc[i+1]:
+#         tlist = [ngram]
+#         tlist.append(ngrams_all[i+1].count(ngram))
+#         ngrams_prob[i+1].append(tlist)
 
-ngrams_prob = {1:[], 2:[], 3:[]}
-for i in range(3):
-    for ngram in ngrams_voc[i+1]:
-        tlist = [ngram]
-        tlist.append(ngrams_all[i+1].count(ngram))
-        ngrams_prob[i+1].append(tlist)
+# for i in range(3):
+#     for ngram in ngrams_prob[i+1]:
+#         ngram[-1] = (ngram[-1]+1)/(total_ngrams[i+1]+total_voc[i+1])
 
-for i in range(3):
-    for ngram in ngrams_prob[i+1]:
-        ngram[-1] = (ngram[-1]+1)/(total_ngrams[i+1]+total_voc[i+1])
-
-for i in range(3):
-    ngrams_prob[i+1] = sorted(ngrams_prob[i+1], key = lambda x:x[1], reverse =
-True)
+# for i in range(3):
+#     ngrams_prob[i+1] = sorted(ngrams_prob[i+1], key = lambda x:x[1], reverse =
+# True)
     
-print("Most common (1,2,3)-grams")
-print ("Most common unigrams: " + str(ngrams_prob[1][:10]))
-print ("Most common bigrams: " + str(ngrams_prob[2][:10]))
-print ("Most common trigrams: " + str(ngrams_prob[3][:10]))
+# print("Most common (1,2,3)-grams")
+# print ("Most common unigrams: " + str(ngrams_prob[1][:10]))
+# print ("Most common bigrams: " + str(ngrams_prob[2][:10]))
+# print ("Most common trigrams: " + str(ngrams_prob[3][:10]))
