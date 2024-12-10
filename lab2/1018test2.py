@@ -5,6 +5,7 @@ from sklearn.metrics import precision_score, recall_score
 import nltk
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
+import pandas as pd
 
 import ssl
 #
@@ -33,16 +34,21 @@ def preprocess_documents(documents):
 
     return processed_docs
 
+def read_csv(file_path):
+        return pd.read_csv(file_path)
 
 # 1. 数据集
-documents = [
-    "Natural language processing with Python and machine learning.",
-    "Machine learning models can classify data and predict outcomes.",
-    "We build a search engine using cosine similarity and NLP.",
-    "Information retrieval involves ranking documents by relevance.",
-    "Natural language models understand human queries and respond."
-]
-document = open("data/dataset1.txt", encoding="utf8").read()
+# documents = [
+#     "Natural language processing with Python and machine learning.",
+#     "Machine learning models can classify data and predict outcomes.",
+#     "We build a search engine using cosine similarity and NLP.",
+#     "Information retrieval involves ranking documents by relevance.",
+#     "Natural language models understand human queries and respond.",
+#     "Hello! How can I assist you today?"
+# ]
+# document = open("data/dataset1.txt", encoding="utf8").read()
+csv_data = read_csv("data/CW1-Dataset.csv")
+documents = csv_data['Answer']
 # documents.append(document)
 # 2. 文档预处理
 processed_documents = preprocess_documents(documents)
